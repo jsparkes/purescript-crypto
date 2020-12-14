@@ -16,12 +16,12 @@ main :: Effect Unit
 main = do
   hexHash <- Hash.hex Hash.SHA512 password
   buf <- Buffer.fromString password UTF8
-  hexBufferHash <- Hash.hexBuffer Hash.SHA512 buf
+  hexBufferHash <- Hash.hex' Hash.SHA512 buf
   hexHmac <- Hmac.hex Hash.SHA512 secret password
   hexCipher <- Cipher.hex Cipher.AES256 password identifier
   fromHexDecipher <- Decipher.fromHex Cipher.AES256 password hexCipher
   base64Hash <- Hash.base64 Hash.SHA512 password
-  base64BufferHash <- Hash.base64Buffer Hash.SHA512 buf
+  base64BufferHash <- Hash.base64' Hash.SHA512 buf
   base64Hmac <- Hmac.base64 Hash.SHA512 secret password
   base64Cipher <- Cipher.base64 Cipher.AES256 password identifier
   fromBase64Decipher <- Decipher.fromBase64 Cipher.AES256 password base64Cipher
