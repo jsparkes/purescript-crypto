@@ -10,7 +10,7 @@ import Node.Crypto.Cipher as Cipher
 import Node.Crypto.Decipher as Decipher
 import Node.Crypto.Hash as Hash
 import Node.Crypto.Hmac as Hmac
-import Node.Encoding (Encoding(UTF8, Hex, Base64))
+import Node.Encoding (Encoding(UTF8))
 import Test.Assert (assert)
 
 main :: Effect Unit
